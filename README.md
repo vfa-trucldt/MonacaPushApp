@@ -3,15 +3,15 @@
 <center><img src="readme-img/001.png" alt="画像1" width="400px"></center>
 
 ## 概要
-* [ニフクラ mobile backend](http://mb.cloud.nifty.com/)の『プッシュ通知』機能を実装したサンプルプロジェクトです
-* 簡単な操作ですぐに [ニフクラ mobile backend](http://mb.cloud.nifty.com/)の機能を体験いただけます★☆
+* [ニフクラ mobile backend](https://mbaas.nifcloud.com/)の『プッシュ通知』機能を実装したサンプルプロジェクトです
+* 簡単な操作ですぐに [ニフクラ mobile backend](https://mbaas.nifcloud.com/)の機能を体験いただけます★☆
 
 ## ニフクラ mobile backendとは
 スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が**開発不要**、しかも基本**無料**(注1)で使えるクラウドサービス！
 
 <center><img src="readme-img/002.png" alt="画像2" width="300px"></center>
 
-注1：詳しくは[こちら](http://mb.cloud.nifty.com/price.htm)をご覧ください
+注1：詳しくは[こちら](https://mbaas.nifcloud.com/price.htm)をご覧ください
 
 <div style="page-break-before:always"></div>
 
@@ -20,7 +20,7 @@
 * Monaca 会員登録
   * 下記リンクより登録（無料）をお願いします<br>https://ja.monaca.io/
 * ニフクラ  mobile backend 会員登録
-  * 下記リンクより登録（無料）をお願いします<br>http://mb.cloud.nifty.com/
+  * 下記リンクより登録（無料）をお願いします<br>https://mbaas.nifcloud.com/
 * 推奨ブラウザ環境の準備
  * Chrome最新版
 
@@ -61,7 +61,7 @@ __iOSの通知サービス APNs（Apple Push Notification Service）__
 動作確認を行う端末に応じて該当する内容を準備してください
 
 #### Android端末で動作確認をする場合
- __[Android 端末で動作確認されるかたはこちら](http://mb.cloud.nifty.com/doc/current/tutorial/push_setup_android.html)__
+ __[Android 端末で動作確認されるかたはこちら](https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html)__
 
 * ニフクラ  mobile backend と連携させるための APIキー(サーバーキー)と端末情報の登録処理時に必要な Sender ID (送信者ID)を取得する必要があります
 * 下記リンク先のドキュメントを参考に、FCM プロジェクトの作成と APIキー・Sender IDの取得を行ってください
@@ -77,7 +77,7 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFC
 <div style="page-break-before:always"></div>
 
 ### 1. ニフクラ  mobile backend の準備
-* ニフクラ  mobile backend にログインします<br>http://mb.cloud.nifty.com/
+* ニフクラ  mobile backend にログインします<br>https://mbaas.nifcloud.com/
 
 <center><img src="readme-img/003-1.png" alt="画像3-1" width="350px"></center>
 
@@ -240,7 +240,7 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFC
 <div style="page-break-before:always"></div>
 
 #### ロジック
-* `index.html`の`<script></script>`タグ内にデバイストークンを取得し、[ニフクラ mobile backend](http://mb.cloud.nifty.com/)に保存するロジックを書いています
+* `index.html`の`<script></script>`タグ内にデバイストークンを取得し、[ニフクラ mobile backend](https://mbaas.nifcloud.com/)に保存するロジックを書いています
 
 ```js
 document.addEventListener("deviceready", function(){
@@ -259,5 +259,5 @@ document.addEventListener("deviceready", function(){
 
 ## 参考
 * ニフクラ mobile backend のドキュメントもご活用ください
- * [クイックスタート](http://mb.cloud.nifty.com/doc/current/introduction/quickstart_monaca.html)
- * [プッシュ通知](http://mb.cloud.nifty.com/doc/current/push/basic_usage_ios.html)
+ * [クイックスタート](https://mbaas.nifcloud.com/doc/current/introduction/quickstart_monaca.html)
+ * [プッシュ通知](https://mbaas.nifcloud.com/doc/current/push/basic_usage_ios.html)
