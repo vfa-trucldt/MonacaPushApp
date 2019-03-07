@@ -1,17 +1,18 @@
 # <small>【Monaca】<br>アプリにプッシュ通知を組み込もう！</small>
+*2019/03/06更新*
 
 <center><img src="readme-img/001.png" alt="画像1" width="400px"></center>
 
 ## 概要
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の『プッシュ通知』機能を実装したサンプルプロジェクトです
-* 簡単な操作ですぐに [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の機能を体験いただけます★☆
+* [ニフクラ mobile backend](https://mbaas.nifcloud.com/)の『プッシュ通知』機能を実装したサンプルプロジェクトです
+* 簡単な操作ですぐに [ニフクラ mobile backend](https://mbaas.nifcloud.com/)の機能を体験いただけます★☆
 
-## ニフティクラウドmobile backendとは
+## ニフクラ mobile backendとは
 スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が**開発不要**、しかも基本**無料**(注1)で使えるクラウドサービス！
 
 <center><img src="readme-img/002.png" alt="画像2" width="300px"></center>
 
-注1：詳しくは[こちら](http://mb.cloud.nifty.com/price.htm)をご覧ください
+注1：詳しくは[こちら](https://mbaas.nifcloud.com/price.htm)をご覧ください
 
 <div style="page-break-before:always"></div>
 
@@ -19,8 +20,8 @@
 ### 共通
 * Monaca 会員登録
   * 下記リンクより登録（無料）をお願いします<br>https://ja.monaca.io/
-* ニフティクラウド mobile backend 会員登録
-  * 下記リンクより登録（無料）をお願いします<br>http://mb.cloud.nifty.com/
+* ニフクラ  mobile backend 会員登録
+  * 下記リンクより登録（無料）をお願いします<br>https://mbaas.nifcloud.com/
 * 推奨ブラウザ環境の準備
  * Chrome最新版
 
@@ -39,7 +40,7 @@
 <div style="page-break-before:always"></div>
 
 ## プッシュ通知の仕組み
-ニフティクラウド mobile backend のプッシュ通知は、各プラットフォームが提供している通知サービスを利用しています。
+ニフクラ  mobile backend のプッシュ通知は、各プラットフォームが提供している通知サービスを利用しています。
 
 __Androidの通知サービス FCM（Firebase Cloud Messaging）__
 
@@ -51,7 +52,7 @@ __iOSの通知サービス APNs（Apple Push Notification Service）__
 
 <center><img src="readme-img/i001.png" alt="画像i1" width="400px"></center>
 
-* 上図のように、アプリ（Monaca）・サーバー（ニフティクラウドmobile backend）・通知サービス（FCMあるいはAPNs）の間で認証が必要になります
+* 上図のように、アプリ（Monaca）・サーバー（ニフクラ mobile backend）・通知サービス（FCMあるいはAPNs）の間で認証が必要になります
  * 認証に必要な鍵や証明書の作成は作業手順の「0.プッシュ通知機能を使うための準備」で行います
 
 <div style="page-break-before:always"></div>
@@ -60,14 +61,19 @@ __iOSの通知サービス APNs（Apple Push Notification Service）__
 ### 0. プッシュ通知機能を使うための準備
 動作確認を行う端末に応じて該当する内容を準備してください
 
-#### Android端末で動作確認をする場合
- __[Android 端末で動作確認されるかたはこちら](http://mb.cloud.nifty.com/doc/current/tutorial/push_setup_android.html)__
+### Android端末で動作確認をする場合
 
-* ニフティクラウド mobile backend と連携させるための APIキー(サーバーキー)と端末情報の登録処理時に必要な Sender ID (送信者ID)を取得する必要があります
-* 下記リンク先のドキュメントを参考に、FCM プロジェクトの作成と APIキー・Sender IDの取得を行ってください
+* Firebaseプロジェクトを作成していただいたあと、下記設定を行っていただく必要があります。
+    * APIキーの取得※2019年3月19日以降廃止
+    * google-service.jsonをアプリに配置
+    * Firebaseプロジェクトの秘密鍵をmobile backendにアップロード
+* 下記リンク先のドキュメントを参考に、FCM プロジェクトの作成と、APIキー・google-services.json・秘密鍵の取得と設定を行ってください
+
+__[Firebaseプロジェクトの作成とAPIキーの取得についてはこちら](https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html)__  
+__[google-services.jsonとFirebase秘密鍵の設定方法についてはこちら](https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html)__
 
 #### iOS端末で動作確認をする場合
-__[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFTYCloud-mbaas/iOS_Certificate)__
+__[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFCloud-mbaas/iOS_Certificate)__
 
 * 上記のドキュメントをご覧の上、必要な証明書類の作成をお願いします
 * 証明書の作成には[Apple Developer Program](https://developer.apple.com/account/)の登録（有料）が必要です
@@ -76,8 +82,8 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFT
 
 <div style="page-break-before:always"></div>
 
-### 1. ニフティクラウド mobile backend の準備
-* ニフティクラウド mobile backend にログインします<br>http://mb.cloud.nifty.com/
+### 1. ニフクラ  mobile backend の準備
+* ニフクラ  mobile backend にログインします<br>https://mbaas.nifcloud.com/
 
 <center><img src="readme-img/003-1.png" alt="画像3-1" width="350px"></center>
 
@@ -98,7 +104,8 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFT
 
 <center><img src="readme-img/004.png" alt="画像4" width="500px"></center>
 
-* 続けて、「 __0. プッシュ通知機能を使うための準備__ 」で動作確認端末別に作成した認証キーまたは証明書を設定します
+* 続けて、「 0. プッシュ通知機能を使うための準備 」で動作確認端末別に作成した認証キーまたは証明書を設定します  
+※下記画像は、2019/03/06時点での管理画面画像となります。
 
 <center><img src="readme-img/005.png" alt="画像5" width="500px"></center>
 
@@ -120,7 +127,7 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFT
 * プロジェクト名を入力します
 * 説明は空欄でOKです
 * インポート方法は「URLを指定してインポート」を選択し、下記リンクを 右クリック してURLをコピーしたものを貼り付けてください
-  * `https://github.com/NIFTYCloud-mbaas/MonacaPushApp/archive/master.zip`
+  * `https://github.com/NIFCloud-mbaas/MonacaPushApp/archive/master.zip`
 
 <center><img src="readme-img/i038.png" alt="画像9" width="250px"></center>
 
@@ -135,8 +142,6 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFT
 * `www/index.html`を編集します
   * Monacaでプロジェクトを開くとデフォルトで表示されるファイルです
 * 中ほどにある、`YOUR_NCMB_APPLICATION_KEY`と`YOUR_NCMB_CLIENT_KEY`の部分を、先程 mobile backend のダッシュボード上で確認した APIキーに書き換えます
-* __Android端末で動作確認をする場合__ は、`YOUR_FCM_SENDER_ID`を FCM で発行した Sender ID (送信者ID)に書き換えます
-  * iOS端末で動作確認をする場合は、そのままでOKです
 
 <center><img src="readme-img/i034.png" alt="画像7" width="500px"></center>
 
@@ -194,7 +199,7 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFT
 1. iTunesを使う方法
   * ダウンロードしたプロジェクト.ipaをドラッグ＆ドロップ
 1. Xcodeを使う方法
-  * http://docs.monaca.mobi/cur/ja/manual/deploy/non_market_deploy/
+  * https://docs.monaca.io/ja/products_guide/monaca_ide/deploy/non_market_deploy/
 1. DeployGateを使う方法
   * アカウント（無料）を取得し、ダウンロードしたプロジェクト.ipaをドラッグ＆ドロップ
   * https://deploygate.com/
@@ -240,7 +245,7 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFT
 <div style="page-break-before:always"></div>
 
 #### ロジック
-* `index.html`の`<script></script>`タグ内にデバイストークンを取得し、[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)に保存するロジックを書いています
+* `index.html`の`<script></script>`タグ内にデバイストークンを取得し、[ニフクラ mobile backend](https://mbaas.nifcloud.com/)に保存するロジックを書いています
 
 ```js
 document.addEventListener("deviceready", function(){
@@ -258,6 +263,6 @@ document.addEventListener("deviceready", function(){
 
 
 ## 参考
-* ニフティクラウドmobile backend のドキュメントもご活用ください
- * [クイックスタート](http://mb.cloud.nifty.com/doc/current/introduction/quickstart_monaca.html)
- * [プッシュ通知](http://mb.cloud.nifty.com/doc/current/push/basic_usage_ios.html)
+* ニフクラ mobile backend のドキュメントもご活用ください
+ * [クイックスタート](https://mbaas.nifcloud.com/doc/current/introduction/quickstart_monaca.html)
+ * [プッシュ通知](https://mbaas.nifcloud.com/doc/current/push/basic_usage_ios.html)
