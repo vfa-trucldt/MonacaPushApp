@@ -1,4 +1,5 @@
 # <small>【Monaca】<br>アプリにプッシュ通知を組み込もう！</small>
+*2016/09/27作成（2019/03/06更新）*
 
 <center><img src="readme-img/001.png" alt="画像1" width="400px"></center>
 
@@ -60,11 +61,16 @@ __iOSの通知サービス APNs（Apple Push Notification Service）__
 ### 0. プッシュ通知機能を使うための準備
 動作確認を行う端末に応じて該当する内容を準備してください
 
-#### Android端末で動作確認をする場合
- __[Android 端末で動作確認されるかたはこちら](https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html)__
+### Android端末で動作確認をする場合
 
-* ニフクラ  mobile backend と連携させるための APIキー(サーバーキー)と端末情報の登録処理時に必要な Sender ID (送信者ID)を取得する必要があります
-* 下記リンク先のドキュメントを参考に、FCM プロジェクトの作成と APIキー・Sender IDの取得を行ってください
+* Firebaseプロジェクトを作成していただいたあと、下記設定を行っていただく必要があります。
+    * APIキーの取得※2019年3月19日以降廃止
+    * google-service.jsonをアプリに配置
+    * Firebaseプロジェクトの秘密鍵をmobile backendにアップロード
+* 下記リンク先のドキュメントを参考に、FCM プロジェクトの作成と、APIキー・google-services.json・秘密鍵の取得と設定を行ってください
+
+__[Firebaseプロジェクトの作成とAPIキーの取得についてはこちら](https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html)__  
+__[google-services.jsonとFirebase秘密鍵の設定方法についてはこちら](https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html)__
 
 #### iOS端末で動作確認をする場合
 __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFCloud-mbaas/iOS_Certificate)__
@@ -98,7 +104,8 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFC
 
 <center><img src="readme-img/004.png" alt="画像4" width="500px"></center>
 
-* 続けて、「 __0. プッシュ通知機能を使うための準備__ 」で動作確認端末別に作成した認証キーまたは証明書を設定します
+* 続けて、「 0. プッシュ通知機能を使うための準備 」で動作確認端末別に作成した認証キーまたは証明書を設定します  
+※下記画像は、2019/03/06時点での管理画面画像となります。
 
 <center><img src="readme-img/005.png" alt="画像5" width="500px"></center>
 
@@ -135,8 +142,6 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFC
 * `www/index.html`を編集します
   * Monacaでプロジェクトを開くとデフォルトで表示されるファイルです
 * 中ほどにある、`YOUR_NCMB_APPLICATION_KEY`と`YOUR_NCMB_CLIENT_KEY`の部分を、先程 mobile backend のダッシュボード上で確認した APIキーに書き換えます
-* __Android端末で動作確認をする場合__ は、`YOUR_FCM_SENDER_ID`を FCM で発行した Sender ID (送信者ID)に書き換えます
-  * iOS端末で動作確認をする場合は、そのままでOKです
 
 <center><img src="readme-img/i034.png" alt="画像7" width="500px"></center>
 
@@ -194,7 +199,7 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFC
 1. iTunesを使う方法
   * ダウンロードしたプロジェクト.ipaをドラッグ＆ドロップ
 1. Xcodeを使う方法
-  * http://docs.monaca.mobi/cur/ja/manual/deploy/non_market_deploy/
+  * https://docs.monaca.io/ja/products_guide/monaca_ide/deploy/non_market_deploy/
 1. DeployGateを使う方法
   * アカウント（無料）を取得し、ダウンロードしたプロジェクト.ipaをドラッグ＆ドロップ
   * https://deploygate.com/
