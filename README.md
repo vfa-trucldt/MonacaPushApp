@@ -1,5 +1,5 @@
 # <small>【Monaca】<br>アプリにプッシュ通知を組み込もう！</small>
-*2016/09/27作成（2019/03/06更新）*
+*2019/03/06更新*
 
 <center><img src="readme-img/001.png" alt="画像1" width="400px"></center>
 
