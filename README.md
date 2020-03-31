@@ -29,7 +29,6 @@
 * MacOS Mojave v10.14.6 (18G103)
 * Android studio: 3.4.1
 * Simulator: Pixel 2 Android OS Version 10
-* Unity 2019.1.14f1
 
 ### iOS端末で動作確認をする場合
 * Mac（キーチェーンアクセスを利用）
@@ -74,7 +73,7 @@ __[Firebaseプロジェクトの作成とAPIキーの取得についてはこち
 __[google-services.jsonとFirebase秘密鍵の設定方法についてはこちら](https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html)__
 
 #### iOS端末で動作確認をする場合
-__[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFCloud-mbaas/iOS_Certificate)__
+__[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFCLOUD-mbaas/iOS_Certificate)__
 
 * 上記のドキュメントをご覧の上、必要な証明書類の作成をお願いします
 * 証明書の作成には[Apple Developer Program](https://developer.apple.com/account/)の登録（有料）が必要です
@@ -128,7 +127,7 @@ __[iOS 端末で動作確認されるかたはこちら](https://github.com/NIFC
 * プロジェクト名を入力します
 * 説明は空欄でOKです
 * インポート方法は「URLを指定してインポート」を選択し、下記リンクを 右クリック してURLをコピーしたものを貼り付けてください
-  * `https://github.com/NIFCloud-mbaas/MonacaPushApp/archive/master.zip`
+  * `https://github.com/NIFCLOUD-mbaas/MonacaPushApp/archive/master.zip`
 
 <center><img src="readme-img/i038.png" alt="画像9" width="250px"></center>
 
